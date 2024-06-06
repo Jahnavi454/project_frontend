@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jahnaviprojectfrontend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jahnaviprojectfrontend
+  template:
+    metadata:
+      labels:
+        app: jahnaviprojectfrontend 
+    spec:
+      containers:
+        - name: jahnaviprojectfrontend 
+          image: azurebackend1.azurecr.io/jahnaviprojectfrontend
+          ports:
+          - containerPort: 4200
